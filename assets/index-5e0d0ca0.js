@@ -50,15 +50,18 @@ Error generating stack: `+o.message+`
         text-align: center;
         font-family: system-ui;
         font-size: 25pt;
-
+        width: 100%;
     }
+
     #submitButton {
         padding: 1rem;
+        font-size: 15pt;
         border-radius: 12px;
         border: none;
         cursor: pointer;
         transform: scale(1);
         transition: all 0.3s ease-in-out;
+        width: 50%;
         &:hover {
             transform: scale(1.2)
         }
