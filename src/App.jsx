@@ -1,45 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from "styled-components"
+import "./App.css"
+import MyForm from "./components/MyForm"
 
 function App() {
-  const [count, increment] = useCount(0)
+  const TestContainer = styled.div`
+    box-sizing: border-box;
+    background-color: #FFFFFF44;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 12px 24px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 50%;
+    cursor: pointer;
 
+    & p {
+      background-color: #00000088;
+      color: white;
+      border: 2px solid white;
+      border-radius: 5px;
+      padding: 12px 24px;
+      font-size: 30pt;
+      transition: all 0.15s ease-in-out;
+    }
+
+    &:hover {
+      & p {
+        color: #00000088;
+        background-color: white;
+      }
+    }
+
+    &:active {
+      & p {
+        color: red;
+      }
+    }
+  `
+  
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => increment()}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <TestContainer>
+        <p style={{margin: "0px"}}>This is a test</p>
+        <MyForm />
+      </TestContainer>
     </>
   )
-}
-
-function useCount() {
-  const [count, setCount] = useState(0);
-
-  function increment() {
-    setCount(count => count + 1);
-  }
-
-  return [count, increment];
 }
 
 export default App
